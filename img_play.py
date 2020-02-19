@@ -5,17 +5,26 @@ import numpy as np
 import random
 
 
-def roll_die():
-    number_of_rolls = int(input('rolls: '))
-    number_of_sides = int(input('sides: '))
-    counts = {value: 0 for value in range(1, number_of_sides+1)}
-    for _ in range(0, number_of_rolls):
-        counts[random.randint(1, number_of_sides)] += 1
-    print(counts)
+def multiples_of_3(upperbound):
+    total = 0
+    for num in range(3, upperbound, 3):
+        total += num
+    return total
+
+
+def multiples(upperbound):
+    # n(a1+an)/2
+    # change upperbound to exclusive
+    upperbound -= 1
+    return (upperbound // 3) * (3 + (upperbound - upperbound % 3)) / 2
 
 
 def main():
-    roll_die()
+    for i in range(10, 100):
+        print('i = ', i)
+        print(multiples_of_3(i))
+        print(multiples(i))
+        print()
 
 
 if __name__ == '__main__':
