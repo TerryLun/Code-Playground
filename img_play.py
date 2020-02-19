@@ -1,12 +1,22 @@
-import cv2
+import copy
+
+import cv2 as cv
 import numpy as np
+import random
 
-img = cv2.imread('smallgray.png', 1)
-cv2.imwrite('img_copy.png', img)
 
-arr = np.zeros((10, 10), dtype=int)
-print(arr)
+def roll_die():
+    number_of_rolls = int(input('rolls: '))
+    number_of_sides = int(input('sides: '))
+    counts = {value: 0 for value in range(1, number_of_sides+1)}
+    for _ in range(0, number_of_rolls):
+        counts[random.randint(1, number_of_sides)] += 1
+    print(counts)
 
-arr2 = np.vstack((img, img))
-print(img)
-print(arr2)
+
+def main():
+    roll_die()
+
+
+if __name__ == '__main__':
+    main()
