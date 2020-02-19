@@ -5,20 +5,17 @@ import numpy as np
 import random
 
 
-
-def name_list():
-    names = {}
-    name = input('Enter a name: (\'quit\' to finish)')
-    while name != 'quit':
-        if len(name) not in names:
-            names[len(name)] = []
-        names[len(name)].append(name)
-        name = input('Enter a name: (\'quit\' to finish)')
-    return names
+def prepender(first, second):
+    count = 0
+    for num in first:
+        if num % second == 0 and num != 0:
+            count += 1
+    return count
 
 
 def main():
-    print(name_list())
+    s = [1, 2, 2, 3, 4, 5, 6, 7, 87, 8, 9, 0, 4, 5, 6, 7, 7, 5, 5, 67, 4]
+    print(prepender(s, 3))
 
 
 if __name__ == '__main__':
