@@ -18,10 +18,13 @@ def unicode(s):
 
 
 def main():
-    s = [1, 2, 2, 3, 4, 5, 6, 7, 87, 8, 9, 0, 4, 5, 6, 7, 7, 5, 5, 67, 4]
-    print(pre_pender(s, 3))
-    print(unicode('sdadsa'))
+    ls = [[] for i in range(8)]
+    for r in range(8):
+        for c in range(8):
+            ls[r].append(r+c)
 
+
+    print(np.matrix(ls))
 
 
 if __name__ == '__main__':
