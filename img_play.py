@@ -18,17 +18,12 @@ def unicode(s):
 
 
 def main():
-    ls = [[] for i in range(8)]
-    for r in range(8):
-        for c in range(8):
-            ls[r].append(r+c)
+    lox = [1, 2, 3]
+    loy = [1, 5]
+    print([[x + y for x in lox] for y in loy])
 
-
-    print(np.matrix(ls))
+    print(np.matrix([[r + c for r in range(8)] for c in range(8)]))
 
 
 if __name__ == '__main__':
     main()
-    
-    
-
