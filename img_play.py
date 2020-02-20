@@ -18,10 +18,11 @@ def unicode(s):
 
 
 def main():
-    a = [1, 2]
-    b = [2, 4]
-    c=[a,b]
-    print(c)
+    a = [1, 2, 3]
+    b = [2, 4, 2]
+    c = [a, b]
+    d = {k: v+t for k, v, t in c}
+    print(d)
 
 
 if __name__ == '__main__':
