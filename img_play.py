@@ -18,11 +18,14 @@ def unicode(s):
 
 
 def main():
-    lox = [1, 2, 3]
-    loy = [1, 5]
-    print([[x + y for x in lox] for y in loy])
+    print({x: int(x / 2 * (x + 1)) for x in [n for n in range(1, 100, 2) if 0 not in [n % i for i in range(2, n)]]})
 
-    print(np.matrix([[r + c for r in range(8)] for c in range(8)]))
+    ls = {x: sum(range(x + 1)) for x in [n for n in range(2, 100) if 0 not in [n % i for i in range(2, n)]]}
+    print(ls)
+
+    print(*list(n for n in range(33,50)))
+    print(*list(n for n in range(10,0,-1)))
+
 
 
 if __name__ == '__main__':
