@@ -6,26 +6,22 @@ import random
 import doctest
 
 
-def solution(s):
-    d = {}
-    for c in s:
-        if c not in d.keys():
-            d[c] = 1
+
+"""
+Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+Find all the elements that appear twice in this array.
+Could you do it without extra space and in O(n) runtime?
+"""
+
+def solution(in_list):
+    result = []
+    for i in range(len(in_list)):
+        if in_list[abs(in_list[i]) - 1] > 0:
+            in_list[abs(in_list[i]) - 1] *= -1
         else:
-            d[c] += 1
-    for c in s:
-        if d[c] == 1:
-            return c
-    return '_'
+            result.append(abs(in_list[i]))
+    return result
 
 
-s0 = ''
-s1 = 'aaabcccdeeef'
-s2 = 'abcbad'
-s3 = 'abcabcabc'
-s4 = 'a'
-print(solution(s0))
-print(solution(s1))
-print(solution(s2))
-print(solution(s3))
-print(solution(s4))
+l = [4, 3, 2, 7, 8, 2, 3, 1]
+print(solution(l))
