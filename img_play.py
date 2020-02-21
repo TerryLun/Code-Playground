@@ -6,19 +6,26 @@ import random
 import doctest
 
 
-def isPrime(n):
-    if n == 2:
-        return False
-    return True if 0 not in [n % i for i in range(2, n)] else False
+def solution(s):
+    d = {}
+    for c in s:
+        if c not in d.keys():
+            d[c] = 1
+        else:
+            d[c] += 1
+    for c in s:
+        if d[c] == 1:
+            return c
+    return '_'
 
 
-def summ(a, b):
-    ls = []
-    for n in range(a, b + 1):
-        if isPrime(n):
-            ls.append(n)
-            print(n)
-    return sum(ls)
-
-
-print(summ(10, 20))
+s0 = ''
+s1 = 'aaabcccdeeef'
+s2 = 'abcbad'
+s3 = 'abcabcabc'
+s4 = 'a'
+print(solution(s0))
+print(solution(s1))
+print(solution(s2))
+print(solution(s3))
+print(solution(s4))
