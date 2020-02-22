@@ -19,7 +19,7 @@ def contains_duplicate(nums):
 ls = [[1, 2, 3, 1], [1, 2, 3, 4], [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]]
 expected = [True, False, True]
 for l, e in zip(ls, expected):
-    if containsDuplicate(l) == e:
+    if contains_duplicate(l) == e:
         print('ok')
     else:
         print('oops')
