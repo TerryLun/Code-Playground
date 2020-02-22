@@ -6,7 +6,7 @@ Your function should return true if any value appears at least twice in the arra
 """
 
 
-def containsDuplicate(nums):
+def contains_duplicate(nums):
     numbers = set()
     for num in nums:
         if num in numbers:
