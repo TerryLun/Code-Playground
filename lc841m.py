@@ -9,22 +9,25 @@ Return true if and only if you can enter every room.
 
 
 def canVisitAllRooms(rooms):
-    key_box = {}
-    for r in rooms:
-        for k in r:
-            if k in key_box.keys():
-                key_box[k] += 1
-            else:
-                key_box[k] = 1
+    key_box = []
+    visit = [False for _ in range(len(rooms))]
+    visit[0] = True
+    for k in rooms[0]:
+        if k not in key_box:
+            key_box.append(k)
+    # while key box is not empty
+    while key_box:
+        key = key_box.pop()
+        visit[key] = True
+        for k in rooms[key]:
+            if k not in key_box and visit[k] is False:
+                key_box.append(k)
+    if False not in visit:
+        return True
+    return False
 
-    for i in range(1, len(rooms)):
-        for k in rooms[i]:
-            key_box[k] -= 1
-        if i not in key_box or key_box[i] == 0:
-            return False
-        for k in rooms[i]:
-            key_box[k] += 1
-    return True
 
-
-print(canVisitAllRooms([[4], [3], [], [2, 5, 7], [1], [], [8, 9], [], [], [6]]))
+print(canVisitAllRooms([[1], [1, 1]]) is True)
+print(canVisitAllRooms([[1], [2], [3], []]) is True)
+print(canVisitAllRooms([[1, 3], [3, 0, 1], [2], [0]]) is False)
+print(canVisitAllRooms([[4], [3], [], [2, 5, 7], [1], [], [8, 9], [], [], [6]]) is False)
