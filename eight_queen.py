@@ -1,4 +1,5 @@
 from numpy import matrix
+import time
 
 
 def number_of_queens(bo):
@@ -26,6 +27,10 @@ def validate(bo, x, y):
             return False
     # to bottom left
     for i, j in zip(range(x, 8, 1), range(y, -1, -1)):
+        if board[i][j] == 1:
+            return False
+    # to bottom right
+    for i, j in zip(range(x, 8, 1), range(y, 8, 1)):
         if board[i][j] == 1:
             return False
     return True
