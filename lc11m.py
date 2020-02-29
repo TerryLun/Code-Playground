@@ -25,3 +25,8 @@ def maxArea(height):
         else:
             right -= 1
     return maximum
+
+
+inp = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+expected = 49
+print(maxArea(inp) == expected)
