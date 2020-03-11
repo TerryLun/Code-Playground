@@ -14,16 +14,16 @@ def addToArrayForm(a, k):
     :type k: int
     :rtype: List[int]
     """
-        i = len(a) - 1
-        while k or i >= 0:
-            if i >= 0:
-                sum = a[i] + k
-                k, a[i] = divmod(sum, 10)
-                i -= 1
-            else:
-                a.insert(0, k % 10)
-                k = k // 10
-        return a
+    i = len(a) - 1
+    while k or i >= 0:
+        if i >= 0:
+            sum = a[i] + k
+            k, a[i] = divmod(sum, 10)
+            i -= 1
+        else:
+            a.insert(0, k % 10)
+            k = k // 10
+    return a
 
 
 # unit tests
