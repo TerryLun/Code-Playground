@@ -62,5 +62,4 @@ print(reverseVowels(inp) == exp)
 
 inp = "Aa"
 exp = "aA"
-print(reverseVowels(inp))
 print(reverseVowels(inp) == exp)
