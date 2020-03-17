@@ -19,25 +19,35 @@ def findWords(words):
     :type words: List[str]
     :rtype: List[str]
     """
-    r1 = set('qwertyuiop')
-    r2 = set('asdfghjkl')
-    r3 = set('zxcvbnm')
-    lss = [r1, r2, r3]
-    r = []
+    # r1 = set('qwertyuiop')
+    # r2 = set('asdfghjkl')
+    # r3 = set('zxcvbnm')
+    # lss = [r1, r2, r3]
+    # r = []
+    # result = []
+    # for i in range(len(words)):
+    #     okay = True
+    #     w = words[i].lower()
+    #     for ls in lss:
+    #         if w[0] in ls:
+    #             r = ls
+    #             break
+    #     for c in w:
+    #         if c not in r:
+    #             okay = False
+    #             break
+    #     if okay:
+    #         result.append(words[i])
+    # return result
+
+    # clean
+    rows = [set('qwertyuiop'), set('asdfghjkl'), set('zxcvbnm')]
     result = []
-    for i in range(len(words)):
-        okay = True
-        w = words[i].lower()
-        for ls in lss:
-            if w[0] in ls:
-                r = ls
-                break
-        for c in w:
-            if c not in r:
-                okay = False
-                break
-        if okay:
-            result.append(words[i])
+    for w in words:
+        lw = set(w.lower())
+        for row in rows:
+            if lw & row == lw:
+                result.append(w)
     return result
 
 
