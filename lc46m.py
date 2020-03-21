@@ -13,15 +13,20 @@ def permute(nums):
     """
 
     def helper(perm, usd):
+        # if perm list is finished, then it is a valid list to append to the result
         if len(perm) == len(nums):
             result.append(copy.deepcopy(perm))
             return
         for i in range(len(nums)):
+            # ignore used, try next
             if usd[i]:
                 continue
-            usd[i] = True
+            # if number has not been used, append to perm then set to true
             perm.append(nums[i])
+            usd[i] = True
+            # next position
             helper(perm, usd)
+            # backtracks
             perm.pop()
             usd[i] = False
 
