@@ -41,15 +41,6 @@ def permute(nums):
     return result
 
 
-inp = [1, 2]
-exp = [[1, 2], [2, 1]]
-print(permute(inp) == exp)
-
-inp = [1, 2, 3]
-exp = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-print(permute(inp) == exp)
-
-
 # another way to do this
 def copy_and_insert(nums):
     if not nums:
@@ -67,3 +58,37 @@ def copy_and_insert(nums):
         for j in range(len(result)):
             result[j].insert(j // math.factorial(i), nums[i])
     return result
+
+
+def compare(*lists):
+    def convert(ls):
+        list_str = []
+        for l in ls[:]:
+            s = [str(i) for i in l]
+            list_str.append(''.join(s))
+        return set(list_str)
+
+    collector = []
+    for lst in lists:
+        collector.append(convert(lst))
+    return collector[1:] == collector[:-1]
+
+
+inp = [1, 2]
+exp = [[1, 2], [2, 1]]
+print(permute(inp) == exp)
+
+inp = [1, 2, 3]
+exp = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+print(permute(inp) == exp)
+
+inp = [1, 2, 3, 4]
+exp = [[1, 2, 3, 4], [1, 2, 4, 3], [1, 3, 2, 4], [1, 3, 4, 2], [1, 4, 2, 3], [1, 4, 3, 2],
+       [2, 1, 3, 4], [2, 1, 4, 3], [2, 3, 1, 4], [2, 3, 4, 1], [2, 4, 1, 3], [2, 4, 3, 1],
+       [3, 1, 2, 4], [3, 1, 4, 2], [3, 2, 1, 4], [3, 2, 4, 1], [3, 4, 1, 2], [3, 4, 2, 1],
+       [4, 1, 2, 3], [4, 1, 3, 2], [4, 2, 1, 3], [4, 2, 3, 1], [4, 3, 1, 2], [4, 3, 2, 1]]
+print(permute(inp) == exp)
+
+res1 = permute(inp)
+res2 = copy_and_insert(inp)
+print(compare(res1, res2))
