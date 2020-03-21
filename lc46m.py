@@ -59,7 +59,7 @@ def copy_and_insert(nums):
 
     for i in range(1, len(nums)):
         # make copy of existing lists in result and append i times
-        temp = copy.deepcopy(result)
+        temp = result[:]
         for _ in range(i):
             for ls in temp:
                 result.append(copy.deepcopy(ls))
