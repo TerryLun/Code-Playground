@@ -5,10 +5,16 @@ Given a collection of distinct integers, return all possible permutations.
 """
 import copy
 import math
+import itertools
+
+
+# using library
+def permute(nums):
+    return list(map(list, list(itertools.permutations(nums))))
 
 
 # backtracking
-def permute(nums):
+def backtrack(nums):
     """
     :type nums: List[int]
     :rtype: List[List[int]]
@@ -34,7 +40,7 @@ def permute(nums):
 
     result = []
     if not nums:
-        return result
+        return [[]]
     used = [False for i in range(len(nums))]
     permutation = []
     helper(permutation, used)
@@ -44,8 +50,8 @@ def permute(nums):
 # another way to do this
 def copy_and_insert(nums):
     if not nums:
-        return []
-    # append make first list containing first number
+        return [[]]
+    # make first list containing first number
     result = [[nums[0]]]
 
     for i in range(1, len(nums)):
@@ -74,6 +80,15 @@ def compare(*lists):
     return collector[1:] == collector[:-1]
 
 
+# tests
+inp = []
+exp = [[]]
+print(permute(inp) == exp)
+
+inp = [1]
+exp = [[1]]
+print(permute(inp) == exp)
+
 inp = [1, 2]
 exp = [[1, 2], [2, 1]]
 print(permute(inp) == exp)
@@ -90,5 +105,7 @@ exp = [[1, 2, 3, 4], [1, 2, 4, 3], [1, 3, 2, 4], [1, 3, 4, 2], [1, 4, 2, 3], [1,
 print(permute(inp) == exp)
 
 res1 = permute(inp)
-res2 = copy_and_insert(inp)
-print(compare(res1, res2))
+res2 = backtrack(inp)
+res3 = copy_and_insert(inp)
+
+print(compare(res1, res2, res3))
