@@ -13,6 +13,17 @@ def permute(nums):
     return list(map(list, list(itertools.permutations(nums))))
 
 
+# brute force
+def brute_force(nums):
+    result = []
+    target = set(nums)
+    for i in range(10 ** (len(nums) - 1), 10 ** (len(nums))):
+        n_as_set = {int(n) for n in str(i)}
+        if n_as_set == target:
+            result.append([int(n) for n in str(i)])
+    return result
+
+
 # backtracking
 def backtrack(nums):
     """
@@ -107,5 +118,5 @@ print(permute(inp) == exp)
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-
-print(compare(res1, res2, res3))
+res4 = brute_force(inp)
+print(compare(res1, res2, res3, res4))
