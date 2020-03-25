@@ -82,28 +82,36 @@ def compare(*lists):
 
 # tests
 inp = []
-exp = [[]]
-print(permute(inp) == exp)
+res1 = permute(inp)
+res2 = backtrack(inp)
+res3 = copy_and_insert(inp)
+print(compare(res1, res2, res3))
 
 inp = [1]
-exp = [[1]]
-print(permute(inp) == exp)
+res1 = permute(inp)
+res2 = backtrack(inp)
+res3 = copy_and_insert(inp)
+print(compare(res1, res2, res3))
 
 inp = [1, 0]
-exp = [[1, 0], [0, 1]]
-print(permute(inp) == exp)
+res1 = permute(inp)
+res2 = backtrack(inp)
+res3 = copy_and_insert(inp)
+print(compare(res1, res2, res3))
 
 inp = [1, 2, 3]
-exp = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-print(permute(inp) == exp)
+res1 = permute(inp)
+res2 = backtrack(inp)
+res3 = copy_and_insert(inp)
+print(compare(res1, res2, res3))
 
 inp = [1, 2, 3, 4]
-exp = [[1, 2, 3, 4], [1, 2, 4, 3], [1, 3, 2, 4], [1, 3, 4, 2], [1, 4, 2, 3], [1, 4, 3, 2],
-       [2, 1, 3, 4], [2, 1, 4, 3], [2, 3, 1, 4], [2, 3, 4, 1], [2, 4, 1, 3], [2, 4, 3, 1],
-       [3, 1, 2, 4], [3, 1, 4, 2], [3, 2, 1, 4], [3, 2, 4, 1], [3, 4, 1, 2], [3, 4, 2, 1],
-       [4, 1, 2, 3], [4, 1, 3, 2], [4, 2, 1, 3], [4, 2, 3, 1], [4, 3, 1, 2], [4, 3, 2, 1]]
-print(permute(inp) == exp)
+res1 = permute(inp)
+res2 = backtrack(inp)
+res3 = copy_and_insert(inp)
+print(compare(res1, res2, res3))
 
+inp = [-1, 0, 1, 2, 3, 4]
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
