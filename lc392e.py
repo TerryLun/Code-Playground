@@ -31,27 +31,51 @@ def isSubsequence(s, t):
     return True
 
 
+def is_subsequence_preprocess(s, t):
+    """
+    :type s: str
+    :type t: str
+    :rtype: bool
+    """
+    pos = {}
+    cur_pos = 0
+    # pre-process
+    for i in range(len(t)):
+        if t[i] in pos.keys():
+            pos[t[i]].append(i)
+        else:
+            pos[t[i]] = [i]
+    for c in s:
+        if c in pos.keys() and cur_pos <= max(pos[c]):
+            for v in pos[c]:
+                if v >= cur_pos:
+                    cur_pos = v
+        else:
+            return False
+    return True
+
+
 s = "abc"
 t = "ahbgdc"
 exp = True
-print(isSubsequence(s, t) == exp)
+print(is_subsequence_preprocess(s, t) == exp)
 
 s = "axc"
 t = "ahbgdc"
 exp = False
-print(isSubsequence(s, t) == exp)
+print(is_subsequence_preprocess(s, t) == exp)
 
 s = ""
 t = "ahbgdc"
 exp = True
-print(isSubsequence(s, t) == exp)
+print(is_subsequence_preprocess(s, t) == exp)
 
 s = "axc"
 t = ""
 exp = False
-print(isSubsequence(s, t) == exp)
+print(is_subsequence_preprocess(s, t) == exp)
 
 s = "leeeeetcode"
 t = "ylyeyeyeytycyoydye"
 exp = False
-print(isSubsequence(s, t) == exp)
+print(is_subsequence_preprocess(s, t) == exp)
