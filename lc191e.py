@@ -6,7 +6,7 @@ weight).
 """
 
 
-def hammingWeight(self, n):
+def hammingWeight(n):
     """
     :type n: int
     :rtype: int
