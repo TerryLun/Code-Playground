@@ -19,8 +19,7 @@ def singleNumber(nums):
             count.add(n)
         else:
             count.remove(n)
-    for n in count:
-        return n
+    return count.pop()
 
 
 inp = [1]
