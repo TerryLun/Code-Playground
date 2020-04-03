@@ -20,22 +20,10 @@ class KthLargest(object):
         :type k: int
         :type nums: List[int]
         """
-        store = []
-        low_i = 0
-        if len(nums) < k:
-            for n in nums:
-                store.append(n)
-        else:
-            for i in range(0, k):
-                store.append(nums[i])
-            low_i = store.index(min(store))
-        for i in range(k, len(nums)):
-            if nums[i] > store[low_i]:
-                store[low_i] = nums[i]
-                low_i = store.index(min(store))
-        self.__nums = store
-        self.__low_i = low_i
+        self.__nums = []
         self.__k = k
+        for n in nums:
+            self.add(n)
 
     def add(self, val):
         """
@@ -44,19 +32,18 @@ class KthLargest(object):
         """
         if len(self.__nums) < self.__k:
             self.__nums.append(val)
-            self.__low_i = self.__nums.index(min(self.__nums))
-            return self.__nums[self.__low_i]
-        if val > self.__nums[self.__low_i]:
-            self.__nums[self.__low_i] = val
-            self.__low_i = self.__nums.index(min(self.__nums))
-        return self.__nums[self.__low_i]
+        elif val > min(self.__nums):
+            min_value = min(self.__nums)
+            min_index = self.__nums.index(min_value)
+            self.__nums[min_index] = val
+        return min(self.__nums)
 
 
 k = 3
 arr = [4, 5, 8, 2]
-kthLargest = KthLargest(k, arr)
-print(kthLargest.add(3) == 4)
-print(kthLargest.add(5) == 5)
+kthLargest = KthLargest(k, arr) # 4 5 8
+print(kthLargest.add(3) == 4)  # 4 5 8
+print(kthLargest.add(5) == 5) # 5 5 8
 print(kthLargest.add(10) == 5)
 print(kthLargest.add(9) == 8)
 print(kthLargest.add(4) == 8)
