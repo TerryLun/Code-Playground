@@ -20,7 +20,8 @@ The order of your output does not matter.
 """
 
 
-def groupAnagrams(strs):
+# TLE
+def groupAnagrams_TLE(strs):
     """
     :type strs: List[str]
     :rtype: List[List[str]]
@@ -44,6 +45,24 @@ def groupAnagrams(strs):
                 anadict.pop(k)
         result.append(sub)
     return result
+
+
+# O(MN)
+def groupAnagrams(strs):
+    """
+    :type strs: List[str]
+    :rtype: List[List[str]]
+    """
+    res = {}
+    for s in strs:
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        if tuple(count) not in res.keys():
+            res[tuple(count)] = [s]
+        else:
+            res[tuple(count)].append(s)
+    return res.values()
 
 
 strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
