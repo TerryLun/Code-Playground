@@ -17,6 +17,21 @@ class ListNode(object):
         self.next = None
 
 
+# O(M) space
+# def getIntersectionNode(headA, headB):
+#     p = headA
+#     s = set()
+#     while p:
+#         s.add(p)
+#         p = p.next
+#     p = headB
+#     while p:
+#         if p in s:
+#             return p
+#         p = p.next
+#     return None
+
+# O(1) space
 def getIntersectionNode(headA, headB):
     """
     :type head1, head1: ListNode
@@ -29,20 +44,21 @@ def getIntersectionNode(headA, headB):
         pb = pb.next if pb else headA
     return pa
 
-#264
-#15
+
+# 264
+# 15
 a = ListNode(2)
 heada = a
 a.next = ListNode(6)
 a = a.next
 a.next = ListNode(4)
-a = a.next
-a.next = ListNode(6)
+# a = a.next
+# a.next = ListNode(6)
 
 b = ListNode(1)
 headb = b
 b.next = ListNode(5)
-b = b.next
-b.next = a.next
+# b = b.next
+# b.next = a.next
 
 print(getIntersectionNode(heada, headb))
