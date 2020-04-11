@@ -30,6 +30,7 @@ def diameterOfBinaryTree(root):
         right = dfs(node.right)
         res = max(res, left + right)
         return max(left, right) + 1
+
     dfs(root)
     return res
 
