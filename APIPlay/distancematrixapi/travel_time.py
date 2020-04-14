@@ -4,7 +4,7 @@ import json
 
 def get_travel_time():
     """
-    Query user input address then return latitude and longitude
+    Return distance and travel time of two location
     """
     origins = '49.282441,-123.118667'
     destinations = '3700 Number 3 Rd, Richmond, BC V6X 3X2, Canada'
