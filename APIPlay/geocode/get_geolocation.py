@@ -11,7 +11,9 @@ def get_coordinates():
     responses = requests.get(f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={key}')
     responses.raise_for_status()
     data = json.loads(responses.text)
-    return data['results'][0]['geometry']['location']['lat'], data['results'][0]['geometry']['location']['lng']
+    lat = data['results'][0]['geometry']['location']['lat']
+    lon = data['results'][0]['geometry']['location']['lng']
+    return lat, lon
 
 
 def main():
