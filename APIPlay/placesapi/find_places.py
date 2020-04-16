@@ -6,16 +6,17 @@ def find_closest():
     """
     Find closest store using latitude and longitude
     """
-    lat = 49.282441
-    lon = -123.118667
-    # https://developers.google.com/places/web-service/supported_types
-    place_type = 'grocery_or_supermarket'
-    key = 'AIzaSyARtxtrUYeHG4cfM7O5TRpDy62FG7lkszg'
-    responses = requests.get(f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{lon}&rankby=distance&type={place_type}&key={key}')
+
+    payload = {'location': '49.282441,-123.118667',
+               'rankby': 'distance',
+               'type': 'grocery_or_supermarket',
+               'key': 'AIzaSyC3seDxrJph4nMK3IPMSTvmvhdryXKFpUc'}
+
+    responses = requests.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?', params=payload)
     responses.raise_for_status()
     data = json.loads(responses.text)
     result_list = data['results']
-    """
+
     for place in result_list:
         if 'opening_hours' in place:
             print('Name:', place['name'],
@@ -25,7 +26,7 @@ def find_closest():
                   'Place id:', place['place_id'])
         else:
             print(place['name'], 'has no operating hours info.')
-    """
+
     return result_list
 
 
