@@ -30,9 +30,8 @@ def color_producer(ele):
 fg = folium.FeatureGroup(name='Volcanoes')
 for lt, ln, el, nm in zip(lat, lon, elev, name):
     iframe = folium.IFrame(html=html % (nm, nm, el), width=200, height=100)
-    fg.add_child(
-        folium.CircleMarker(location=[lt, ln], radius=7, popup=folium.Popup(iframe), fill_color=color_producer(el),
-                            color='grey', fill_opacity=0.8))
+    fg.add_child(folium.CircleMarker(location=[lt, ln], radius=7, popup=folium.Popup(iframe),
+                                     fill_color=color_producer(el), color='grey', fill_opacity=0.8))
 
 # add feature group
 volcanoes_map.add_child(fg)
