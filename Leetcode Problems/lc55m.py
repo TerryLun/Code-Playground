@@ -24,7 +24,7 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum
 """
 
 
-def canJump(nums) -> bool:
+def canJump(nums: list) -> bool:
     good = len(nums) - 1
     i = len(nums) - 2
     while i >= 0:
