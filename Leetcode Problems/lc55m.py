@@ -32,3 +32,4 @@ def canJump(nums: list) -> bool:
             good = i
         i -= 1
     return good == i + 1
+
