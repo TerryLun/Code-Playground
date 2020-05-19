@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import nexmo
 
 API_KEY = '29492de1'
-API_SECRET = 'SECRET STRING'
+API_SECRET = 'NEXMO API KEY'
 NEXMO_NUMBER = '14372662415'
 
 # Create a new Nexmo Client object:
