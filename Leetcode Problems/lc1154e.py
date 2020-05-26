@@ -9,7 +9,6 @@ date[4] == date[7] == '-', and all other date[i]'s are digits
 date represents a calendar date between Jan 1st, 1900 and Dec 31, 2019.
 """
 
-
 class Solution(object):
 
     def dayOfYear(self, date):
