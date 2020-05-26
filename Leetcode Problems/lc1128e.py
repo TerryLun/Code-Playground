@@ -10,7 +10,6 @@ Constraints:
 1 <= dominoes[i][j] <= 9
 """
 
-
 def numEquivDominoPairs(dominoes):
     """
     :type dominoes: List[List[int]]
