@@ -16,6 +16,7 @@ def numberOfSteps(num):
         steps += 1
     return steps
 
+
     """
     or:
     For the binary representation from right to left(until we find the leftmost 1):
