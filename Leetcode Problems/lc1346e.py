@@ -8,6 +8,7 @@ i != j
 0 <= i, j < arr.length
 arr[i] == 2 * arr[j]
 
+
 Constraints:
 2 <= arr.length <= 500
 -10^3 <= arr[i] <= 10^3
