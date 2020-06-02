@@ -7,11 +7,9 @@ def birthday(s, d, m):
         result += 1
     for i in range(1, len(s)-m+1):
         window_sum += s[i+m-1] - s[i-1]
-        print(s[i+m-1], s[i-1])
         if window_sum == d:
             result += 1
-    print(result)
     return result
 
 
-birthday([1, 2, 1, 3, 2], 3, 2)
+print(birthday([1, 2, 1, 3, 2], 3, 2) == 2)
