@@ -5,8 +5,8 @@ def birthday(s, d, m):
     result = 0
     if window_sum == d:
         result += 1
-    for i in range(1, len(s)-m+1):
-        window_sum += s[i+m-1] - s[i-1]
+    for i in range(0, len(s)-m):
+        window_sum += s[i+m] - s[i]
         if window_sum == d:
             result += 1
     return result
