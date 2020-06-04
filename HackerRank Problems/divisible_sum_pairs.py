@@ -18,11 +18,6 @@ def divisibleSumPairs(n, k, ar):
                 d[f] += 1
             else:
                 d[f] = 1
-        for b in range(-num, lo - 1, -k):
-            if b in d:
-                d[b] += 1
-            else:
-                d[b] = 1
     return result
 
 
