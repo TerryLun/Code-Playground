@@ -10,7 +10,7 @@ def pick_empty(board):
 def validate(board, num, pos):
     x, y = pos
     n = len(board)
-    target_sum = 1 + n * n + (1 + n * n) // 2
+    target_sum = n * (1 + n * n) // 2
     board[x][y] = str(num)
 
     # row
@@ -82,9 +82,12 @@ def solve(n):
     upperbound = n * n + 1
     used = [False] * (upperbound)
     helper(board, used, upperbound)
-    print_board(board)
     return board
 
 
-# driver code
-solve(3)
+def main():
+    print_board(solve(3))
+
+
+if __name__ == '__main__':
+    main()
