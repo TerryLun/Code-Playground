@@ -15,7 +15,7 @@ def climbingLeaderboard_bf(scores, alice):
 
 def climbingLeaderboard_hsbf(scores, alice):
     """
-    Enhanced with hash set (Still TLE)
+    Optimized with hash set (Still TLE)
     """
     r = []
     for a in alice:
@@ -30,8 +30,20 @@ def climbingLeaderboard_hsbf(scores, alice):
 
 def climbingLeaderboard(scores, alice):
     """
-
+    Two pointers (Accepted O(M+N) )
     """
+    si = 0
+    current_rank = 1
+    result = []
+    for ai in range(len(alice) - 1, -1, -1):
+        while si != len(scores) and alice[ai] < scores[si]:
+            if scores[si] != scores[si - 1]:
+                current_rank += 1
+            si += 1
+        if si == len(scores) or alice[ai] >= scores[si]:
+            result.append(current_rank)
+    result.reverse()
+    return result
 
 
 s = [100, 100, 50, 40, 40, 20, 10]
