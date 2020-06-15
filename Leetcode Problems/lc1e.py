@@ -15,4 +15,4 @@ def twoSum(nums, target):
             comp[target - nums[i]] = i
 
 
-print(twoSum([2, 7, 11, 15], 9) == [0, 1])
+print('Pass' if twoSum([2, 7, 11, 15], 9) == [0, 1] else 'Fail')
