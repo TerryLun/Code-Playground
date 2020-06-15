@@ -14,7 +14,7 @@ def numIslands(grid):
         for c in range(len(grid[r])):
             if grid[r][c] == '1':
                 count += 1
-                bfs(grid, r, c)
+                dfs(grid, r, c)
     return count
 
 
