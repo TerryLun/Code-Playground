@@ -17,3 +17,11 @@ def prime_factors(n):
     if n > 2:
         s.append(n)
     return s
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
