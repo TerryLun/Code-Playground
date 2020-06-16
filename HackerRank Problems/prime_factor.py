@@ -17,6 +17,3 @@ def prime_factors(n):
     if n > 2:
         s.append(n)
     return s
-
-
-print(prime_factors(144))
