@@ -27,7 +27,6 @@ def removeNthFromEnd(head, n):
     :type n: int
     :rtype: ListNode
     """
-
     high = low = head
     while n > 0:
         high = high.next
