@@ -10,10 +10,6 @@ endlessly in a cycle which does not include 1. Those numbers for which this proc
 
 
 def isHappy(n):
-    """
-    :type n: int
-    :rtype: bool
-    """
     appeared = {n}
     while n != 1:
         nums = []
