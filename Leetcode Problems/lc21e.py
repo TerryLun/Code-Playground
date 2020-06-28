@@ -52,6 +52,7 @@ def print_list(head):
     print('\b\b\b\b')
 
 
+# tests
 a = [1, 2, 3]
 b = [1, 3, 4]
 l1 = make(a)
