@@ -15,12 +15,12 @@ def dfs(i, j):
         dfs(i, j - 1)
 
 
-def bfs(a, i, j):
+def bfs(i, j):
     """
     TLE
     """
     def is_floor(x, y):
-        if 0 <= x < n and 0 <= y < m and a[x][y] == '.' and (x, y) not in q and not visited[x][y]:
+        if 0 <= x < n and 0 <= y < m and grid[x][y] == '.' and (x, y) not in q and not visited[x][y]:
             return True
         else:
             return False
@@ -49,7 +49,7 @@ for i in range(n):
 for i in range(n):
     for j in range(m):
         if grid[i][j] == '.' and not visited[i][j]:
-            dfs(i, j)
+            bfs(i, j)
             count += 1
 
 print(count)
