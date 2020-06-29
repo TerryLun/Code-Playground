@@ -5,8 +5,6 @@ a = []
 count = 0
 
 
-
-
 def dfs(a, i, j):
     """
     max recursion depth exceeded
