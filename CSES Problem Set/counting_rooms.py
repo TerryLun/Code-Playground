@@ -1,22 +1,18 @@
 import collections
 
-n, m = map(int, input().split())
-a = []
-count = 0
 
-
-def dfs(a, i, j):
+def dfs(i, j):
     """
     max recursion depth exceeded
     """
-    if i < 0 or i == n or j < 0 or j == m or a[i][j] == '#':
+    if i < 0 or i == n or j < 0 or j == m or grid[i][j] == '#' or visited[i][j]:
         return
     else:
-        a[i][j] = '#'
-        dfs(a, i + 1, j)
-        dfs(a, i, j + 1)
-        dfs(a, i - 1, j)
-        dfs(a, i, j - 1)
+        visited[i][j] = '#'
+        dfs(i + 1, j)
+        dfs(i, j + 1)
+        dfs(i - 1, j)
+        dfs(i, j - 1)
 
 
 def bfs(a, i, j):
@@ -24,7 +20,7 @@ def bfs(a, i, j):
     TLE
     """
     def is_floor(x, y):
-        if 0 <= x < n and 0 <= y < m and a[x][y] == '.' and (x, y) not in q:
+        if 0 <= x < n and 0 <= y < m and a[x][y] == '.' and (x, y) not in q and not visited[x][y]:
             return True
         else:
             return False
@@ -33,20 +29,27 @@ def bfs(a, i, j):
     q.append((i, j))
     while q:
         r, c = q.popleft()
-        a[r][c] = "#"
+        visited[r][c] = True
         dir = [(-1, 0), (0, -1), (1, 0), (0, 1)]
         for d in dir:
             if is_floor(r + d[0], c + d[1]):
                 q.append((r + d[0], c + d[1]))
 
 
+n, m = map(int, input().split())
+grid = []
+visited = []
 for i in range(n):
-    a.append(input())
+    visited.append([False] * m)
+count = 0
+
+for i in range(n):
+    grid.append(input())
 
 for i in range(n):
     for j in range(m):
-        if a[i][j] == '.':
-            bfs(a, i, j)
+        if grid[i][j] == '.' and not visited[i][j]:
+            dfs(i, j)
             count += 1
 
 print(count)
