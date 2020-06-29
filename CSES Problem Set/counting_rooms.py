@@ -24,7 +24,7 @@ def bfs(a, i, j):
     TLE
     """
     def is_floor(x, y):
-        if 0 <= x < n and 0 <= y < m and a[x][y] == '.':
+        if 0 <= x < n and 0 <= y < m and a[x][y] == '.' and (x, y) not in q:
             return True
         else:
             return False
@@ -41,7 +41,7 @@ def bfs(a, i, j):
 
 
 for i in range(n):
-    a.append(list(input()))
+    a.append(input())
 
 for i in range(n):
     for j in range(m):
