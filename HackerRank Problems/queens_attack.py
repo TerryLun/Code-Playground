@@ -1,3 +1,8 @@
+"""
+https://www.hackerrank.com/challenges/queens-attack-2/problem
+"""
+
+
 def queensAttack(n, k, r_q, c_q, obstacles):
     res = 0
 
