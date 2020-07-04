@@ -25,8 +25,9 @@ cells[i] is in {0, 1}
 
 def prisonAfterNDays(cells, N):
     """
-    memo - still TLE
+    length of loop is 14 or 7 - Accepted
     """
+    N = (N % 14) + 14
     memo = {}
     for d in range(N):
         s = ''.join(list(map(str, cells)))
@@ -48,6 +49,6 @@ def prisonAfterNDays(cells, N):
     return cells
 
 
-cells = [0, 1, 0, 1, 1, 0, 0, 1]
-N = 7
+cells = [0, 1, 0, 1, 0, 1, 1, 1]
+N = 30
 print(prisonAfterNDays(cells, N))
