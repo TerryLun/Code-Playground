@@ -25,20 +25,26 @@ cells[i] is in {0, 1}
 
 def prisonAfterNDays(cells, N):
     """
-    TLE
+    memo - still TLE
     """
+    memo = {}
     for d in range(N):
-        a = cells[:]
-        for i in range(1, len(cells) - 1):
-            if cells[i - 1] == cells[i + 1]:
-                a[i] = 1
-            else:
-                a[i] = 0
-        if d == 0 and cells[0] == 1:
-            a[0] = 0
-        if d == 0 and cells[-1] == 1:
-            a[-1] = 0
-        cells[:] = a[:]
+        s = ''.join(list(map(str, cells)))
+        if s in memo:
+            cells[:] = memo[s]
+        else:
+            a = cells[:]
+            for i in range(1, len(cells) - 1):
+                if cells[i - 1] == cells[i + 1]:
+                    a[i] = 1
+                else:
+                    a[i] = 0
+            if d == 0 and cells[0] == 1:
+                a[0] = 0
+            if d == 0 and cells[-1] == 1:
+                a[-1] = 0
+            memo[s] = a[:]
+            cells[:] = a[:]
     return cells
 
 
