@@ -10,10 +10,6 @@ memory.
 
 
 def removeDuplicates(nums):
-    """
-    :type nums: List[int]
-    :rtype: int
-    """
     if not nums:
         return 0
     i = 0
