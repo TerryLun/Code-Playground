@@ -6,7 +6,7 @@ You may not modify the values in the list's nodes, only nodes itself may be chan
 """
 
 
-# Definition for singly-linked list.
+# Definition for singly-linked list
 class ListNode(object):
     def __init__(self, x):
         self.val = x
