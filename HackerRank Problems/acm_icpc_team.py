@@ -1,5 +1,5 @@
 """
-O(N^3) - TLE
+O(N^2) - Accepted
 """
 
 nm = input().split()
@@ -15,10 +15,7 @@ for _ in range(n):
     topic_item = input()
 
     for t in topic:
-        r = 0
-        for i in range(m):
-            if t[i] == '1' or topic_item[i] == '1':
-                r += 1
+        r = bin(int(topic_item,2)|int(t,2))[2:].count('1')
         if r in d:
             d[r] += 1
         else:
