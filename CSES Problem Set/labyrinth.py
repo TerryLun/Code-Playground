@@ -21,8 +21,7 @@ q.append((start, ''))
 
 while q:
     pos, path = q.popleft()
-    row = pos[0]
-    col = pos[1]
+    row, col = pos
     visited[row][col] = True
     if maze[row][col] == 'B':
         found = True
