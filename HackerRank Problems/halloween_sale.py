@@ -1,3 +1,8 @@
+"""
+https://www.hackerrank.com/challenges/halloween-sale/problem
+"""
+
+
 def howManyGames(p, d, m, s):
     r = 0
     while s > 0:
