@@ -11,8 +11,8 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 
 
 def removeElement(nums, val):
-    i = 0
     n = len(nums)
+    i = 0
     while i < n:
         if nums[i] == val:
             nums[i] = nums[n - 1]
