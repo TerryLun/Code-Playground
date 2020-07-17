@@ -11,11 +11,6 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 
 
 def removeElement(nums, val):
-    """
-    :type nums: List[int]
-    :type val: int
-    :rtype: int
-    """
     i = 0
     n = len(nums)
     while i < n:
