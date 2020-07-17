@@ -8,10 +8,6 @@ Note: The vowels does not include the letter "y".
 
 
 def reverseVowels(s):
-    """
-    :type s: str
-    :rtype: str
-    """
     # # TLE:
     # if not s:
     #     return s
