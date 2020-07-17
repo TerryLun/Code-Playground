@@ -7,7 +7,6 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 """
 
 
-
 class ListNode(object):
     def __init__(self, x):
         self.val = x
