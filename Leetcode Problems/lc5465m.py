@@ -19,11 +19,11 @@ def countSubTrees(n, edges, labels):
     """
     TLE
     """
-    def dfs(v, o, l):
-        if labels[v] == l:
+    def dfs(v, o):
+        if labels[v] == labels[o]:
             count[o] += 1
         for x in aj[v]:
-            dfs(x, o, l)
+            dfs(x, o)
 
     aj = [[] for _ in range(n)]
     count = [0 for _ in range(n)]
@@ -36,7 +36,7 @@ def countSubTrees(n, edges, labels):
             aj[e[1]].append(e[0])
             added.add(e[0])
     for v in range(n):
-        dfs(v, v, labels[v])
+        dfs(v, v)
 
     return count
 
