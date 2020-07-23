@@ -1,15 +1,15 @@
-def find_rep(s, t):
-    t_len = len(t)
+def find_rep(inp_string, tar_string):
+    tar_length = len(tar_string)
     count = 0
-    while len(s) >= t_len:
-        if s[:t_len] == t:
+    while len(inp_string) >= tar_length:
+        if inp_string[:tar_length] == tar_string:
             count += 1
-            s = s[t_len:]
+            inp_string = inp_string[tar_length:]
         else:
             return False
-    if len(s) and t[:len(s)] != s:
+    if len(inp_string) and tar_string[:len(inp_string)] != inp_string:
         return False
-    return count, len(s), t_len
+    return count, len(inp_string), tar_length
 
 
 s = input()
