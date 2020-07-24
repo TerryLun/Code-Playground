@@ -8,6 +8,7 @@ Constraints:
 1 <= n <= 10^5
 """
 
+
 def subtractProductAndSum(n: int) -> int:
     str_n = str(n)
     sum_of_digit = 0
