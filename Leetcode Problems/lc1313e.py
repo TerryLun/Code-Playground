@@ -30,6 +30,5 @@ nums.length % 2 == 0
 def decompressRLElist(nums):
     result = []
     for i in range(0, len(nums), 2):
-        for j in range(nums[i]):
-            result.append(nums[i + 1])
+        result += [nums[i + 1] for _ in range(nums[i])]
     return result
