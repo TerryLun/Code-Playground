@@ -1,27 +1,50 @@
+# f, b, n = map(int, input().split())
+# a = []
+# for i in range(1, n + 1):
+#     if i % f != 0 and i % b != 0:
+#         a.append(str(i))
+#     elif i % f == 0 and i % b == 0:
+#         a.append('FizzBuzz')
+#     elif i % b == 0:
+#         a.append('Buzz')
+#     else:
+#         a.append('Fizz')
+# r = []
+# for i in a:
+#     if not r or i.isalpha():
+#         r.append([i])
+#     elif i.isnumeric() and r[-1][-1].isnumeric():
+#         r[-1].append(i)
+#     else:
+#         r.append([i])
+# for i in r:
+#     if len(i) == 1:
+#         print(*i)
+#     else:
+#         print(i[0] + '-' + i[-1])
+
 f, b, n = map(int, input().split())
-a = []
-for i in range(1, n + 1):
-    if i % f != 0 and i % b != 0:
-        a.append(str(i))
-    elif i % f == 0 and i % b == 0:
-        a.append('FizzBuzz')
-    elif i % b == 0:
-        a.append('Buzz')
-    else:
-        a.append('Fizz')
 r = []
-for i in a:
-    if not r or i.isalpha():
-        r.append([i])
-    elif i.isnumeric() and r[-1][-1].isnumeric():
+for i in range(1, n + 1):
+    if i % f == 0 and i % b == 0:
+        i = 'FizzBuzz'
+    elif i % b == 0:
+        i = 'Buzz'
+    elif i % f == 0:
+        i = 'Fizz'
+    else:
+        i = str(i)
+
+    if r and i.isnumeric() and r[-1][-1].isnumeric():
         r[-1].append(i)
     else:
         r.append([i])
+
 for i in r:
-    if len(i) == 1:
+    if i[0].isalpha() or len(i) == 1:
         print(*i)
     else:
-        print(i[0] + '-' + i[-1])
+        print(i[0]+'-'+i[-1])
 
 """
 for input f, b, n
