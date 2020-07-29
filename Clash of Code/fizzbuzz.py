@@ -23,8 +23,33 @@
 #     else:
 #         print(i[0] + '-' + i[-1])
 
+
+# f, b, n = map(int, input().split())
+# r = []
+# for i in range(1, n + 1):
+#     if i % f == 0 and i % b == 0:
+#         i = 'FizzBuzz'
+#     elif i % b == 0:
+#         i = 'Buzz'
+#     elif i % f == 0:
+#         i = 'Fizz'
+#     else:
+#         i = str(i)
+#
+#     if r and i.isnumeric() and r[-1][-1].isnumeric():
+#         r[-1].append(i)
+#     else:
+#         r.append([i])
+#
+# for i in r:
+#     if i[0].isalpha() or len(i) == 1:
+#         print(*i)
+#     else:
+#         print(i[0]+'-'+i[-1])
+
+
 f, b, n = map(int, input().split())
-r = []
+last = None
 for i in range(1, n + 1):
     if i % f == 0 and i % b == 0:
         i = 'FizzBuzz'
@@ -35,16 +60,11 @@ for i in range(1, n + 1):
     else:
         i = str(i)
 
-    if r and i.isnumeric() and r[-1][-1].isnumeric():
-        r[-1].append(i)
-    else:
-        r.append([i])
+    if not last:
+        print(i, end='')
+    elif i.isnumeric()
 
-for i in r:
-    if i[0].isalpha() or len(i) == 1:
-        print(*i)
-    else:
-        print(i[0]+'-'+i[-1])
+    last = i
 
 """
 for input f, b, n
