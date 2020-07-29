@@ -23,33 +23,8 @@
 #     else:
 #         print(i[0] + '-' + i[-1])
 
-
-# f, b, n = map(int, input().split())
-# r = []
-# for i in range(1, n + 1):
-#     if i % f == 0 and i % b == 0:
-#         i = 'FizzBuzz'
-#     elif i % b == 0:
-#         i = 'Buzz'
-#     elif i % f == 0:
-#         i = 'Fizz'
-#     else:
-#         i = str(i)
-#
-#     if r and i.isnumeric() and r[-1][-1].isnumeric():
-#         r[-1].append(i)
-#     else:
-#         r.append([i])
-#
-# for i in r:
-#     if i[0].isalpha() or len(i) == 1:
-#         print(*i)
-#     else:
-#         print(i[0]+'-'+i[-1])
-
-
 f, b, n = map(int, input().split())
-last = None
+r = []
 for i in range(1, n + 1):
     if i % f == 0 and i % b == 0:
         i = 'FizzBuzz'
@@ -60,11 +35,16 @@ for i in range(1, n + 1):
     else:
         i = str(i)
 
-    if not last:
-        print(i, end='')
-    elif i.isnumeric()
+    if r and i.isnumeric() and r[-1][-1].isnumeric():
+        r[-1].append(i)
+    else:
+        r.append([i])
 
-    last = i
+for i in r:
+    if i[0].isalpha() or len(i) == 1:
+        print(*i)
+    else:
+        print(i[0]+'-'+i[-1])
 
 """
 for input f, b, n
@@ -74,10 +54,8 @@ if n % f == 0, print Fizz;
 if n % b == 0, print Buzz;
 if n % f == n % b == 0 ,print FizzBuzz;
 print in separate line.
-
 input:
 5 3 15
-
 output:
 1-2
 Buzz
