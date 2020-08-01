@@ -63,3 +63,20 @@ No
 75 40
 No
 """
+
+
+import collections
+
+q = collections.deque()
+q.append(int(input()))
+input()
+changes = list(map(int, input().split()))
+while q:
+    valid_total = q.popleft()
+    for c in changes:
+        if valid_total - c == 0:
+            print('Yes')
+            exit()
+        elif valid_total - c > 0 and valid_total - c not in q:
+            q.append(valid_total - c)
+print('No')
