@@ -1,6 +1,7 @@
 """
 37. Sudoku Solver
 
+
 Write a program to solve a Sudoku puzzle by filling the empty cells.
 
 A sudoku solution must satisfy all of the following rules:
