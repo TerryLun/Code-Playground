@@ -49,10 +49,6 @@ def groupAnagrams_TLE(strs):
 
 # O(MN)
 def groupAnagrams(strs):
-    """
-    :type strs: List[str]
-    :rtype: List[List[str]]
-    """
     res = {}
     for s in strs:
         count = [0] * 26
