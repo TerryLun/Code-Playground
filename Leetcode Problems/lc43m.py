@@ -33,7 +33,7 @@ def multiply(num1, num2):
     return str(total)
 
 
-# tests
+# test cases
 num1 = "2"
 num2 = "3"
 exp = "6"
