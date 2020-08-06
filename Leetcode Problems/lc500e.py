@@ -15,10 +15,6 @@ You may assume the input string will only contain letters of alphabet.
 
 
 def findWords(words):
-    """
-    :type words: List[str]
-    :rtype: List[str]
-    """
     # r1 = set('qwertyuiop')
     # r2 = set('asdfghjkl')
     # r3 = set('zxcvbnm')
