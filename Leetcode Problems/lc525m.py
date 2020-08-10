@@ -8,10 +8,6 @@ Note: The length of the given binary array will not exceed 50,000.
 
 
 def findMaxLength(nums):
-    """
-    :type nums: List[int]
-    :rtype: int
-    """
     count = 0
     res = 0
     cnt_pos = {0: 0}
