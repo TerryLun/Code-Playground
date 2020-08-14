@@ -12,11 +12,6 @@ Restrictions:
 
 
 def reverseStr(s, k):
-    """
-    :type s: str
-    :type k: int
-    :rtype: str
-    """
     rev = True
     result = ''
 
