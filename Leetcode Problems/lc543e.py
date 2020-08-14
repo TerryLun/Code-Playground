@@ -16,10 +16,6 @@ class TreeNode(object):
 
 
 def diameterOfBinaryTree(root):
-    """
-    :type root: TreeNode
-    :rtype: int
-    """
     res = 0
 
     def dfs(node):
