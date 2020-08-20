@@ -12,11 +12,6 @@ Note: The merging process must start from the root nodes of both trees.
 
 
 def mergeTrees(t1, t2):
-    """
-    :type t1: TreeNode
-    :type t2: TreeNode
-    :rtype: TreeNode
-    """
     if not t1:
         return t2
     if not t2:
