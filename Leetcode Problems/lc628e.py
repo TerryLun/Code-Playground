@@ -11,10 +11,6 @@ Multiplication of any three numbers in the input won't exceed the range of 32-bi
 
 
 def maximumProduct(nums):
-    """
-    :type nums: List[int]
-    :rtype: int
-    """
     highs = [float('-inf'), float('-inf'), float('-inf')]
     lows = [0, 0]
     for n in nums:
