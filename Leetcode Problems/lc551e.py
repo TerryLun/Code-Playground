@@ -12,10 +12,6 @@ You need to return whether the student could be rewarded according to his attend
 
 
 def checkRecord(s):
-    """
-    :type s: str
-    :rtype: bool
-    """
     con_late = 0
     absent = 0
     for rec in s:
