@@ -11,11 +11,6 @@ The length of both given strings is in range [1, 10,000].
 
 
 def checkInclusion(s1, s2):
-    """
-    :type s1: str
-    :type s2: str
-    :rtype: bool
-    """
     low = 0
     high = len(s1) - 1
     while high < len(s2):
