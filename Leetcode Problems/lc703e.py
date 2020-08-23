@@ -16,20 +16,12 @@ You may assume that nums' length ≥ k-1 and k ≥ 1.
 class KthLargest(object):
 
     def __init__(self, k, nums):
-        """
-        :type k: int
-        :type nums: List[int]
-        """
         self.__nums = []
         self.__k = k
         for n in nums:
             self.add(n)
 
     def add(self, val):
-        """
-        :type val: int
-        :rtype: int
-        """
         if len(self.__nums) < self.__k:
             self.__nums.append(val)
         elif val > min(self.__nums):
