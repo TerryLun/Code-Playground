@@ -6,6 +6,7 @@ Given a collection of distinct integers, return all possible permutations.
 import copy
 import math
 import itertools
+import collections
 
 
 # using library
@@ -66,6 +67,25 @@ def copy_and_insert(nums):
     return result
 
 
+def bfs(nums):
+    if not nums:
+        return [[]]
+    q = collections.deque()
+    result = []
+    for i in nums:
+        q.append([i])
+    while q:
+        n = q.popleft()
+        if len(n) == len(nums):
+            result.append(n)
+        else:
+            for i in nums:
+                if i not in n:
+                    t = n + [i]
+                    q.append(t)
+    return result
+
+
 def compare(*lists):
     def convert(ls):
         list_str = []
@@ -85,34 +105,40 @@ inp = []
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-print(compare(res1, res2, res3))
+res4 = bfs(inp)
+print(compare(res1, res2, res3, res4))
 
 inp = [1]
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-print(compare(res1, res2, res3))
+res4 = bfs(inp)
+print(compare(res1, res2, res3, res4))
 
 inp = [1, 0]
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-print(compare(res1, res2, res3))
+res4 = bfs(inp)
+print(compare(res1, res2, res3, res4))
 
 inp = [1, 2, 3]
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-print(compare(res1, res2, res3))
+res4 = bfs(inp)
+print(compare(res1, res2, res3, res4))
 
 inp = [1, 2, 3, 4]
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-print(compare(res1, res2, res3))
+res4 = bfs(inp)
+print(compare(res1, res2, res3, res4))
 
 inp = [-1, 0, 1, 2, 3, 4]
 res1 = permute(inp)
 res2 = backtrack(inp)
 res3 = copy_and_insert(inp)
-print(compare(res1, res2, res3))
+res4 = bfs(inp)
+print(compare(res1, res2, res3, res4))
