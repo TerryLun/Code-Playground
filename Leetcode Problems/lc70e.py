@@ -19,10 +19,6 @@ def memoize(f):
 
 @memoize
 def climbStairs(n):
-    """
-    :type n: int
-    :rtype: int
-    """
     # recursion
     if n == 1 or n == 0:
         return 1
