@@ -12,11 +12,6 @@ S will consist of lowercase letters and have length in range [1, 500]
 
 
 def reorganizeString(S):
-    """
-    :type S: str
-    :rtype: str
-    """
-
     def find_most_occ(dic, banned):
         high_v = 0
         high_k = '0'
