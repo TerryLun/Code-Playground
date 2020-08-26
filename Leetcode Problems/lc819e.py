@@ -21,11 +21,6 @@ Words only consist of letters, never apostrophes or other punctuation symbols.
 
 
 def mostCommonWord(paragraph, banned):
-    """
-    :type paragraph: str
-    :type banned: List[str]
-    :rtype: str
-    """
     paragraph = paragraph.lower()
     banset = set(banned)
     count = {}
