@@ -17,10 +17,6 @@ import re
 
 # regex
 def largeGroupPositions_regex(S):
-    """
-    :type S: str
-    :rtype: List[List[int]]
-    """
     result = []
     pattern = re.compile(r'(\w)\1{2,}')
     match_obj = re.finditer(pattern, S)
