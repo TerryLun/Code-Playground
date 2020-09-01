@@ -2,7 +2,7 @@
 n1
 4
 n2 n3
-n4 n2
+n4 n5
 n1 n2
 n3 n4
 """
@@ -15,7 +15,8 @@ for i in ' ' * n:
         d[a].append(b)
     else:
         d[a] = [b]
-        d[b] = []
+        if b not in d:
+            d[b] = []
 v = {k: False for k in d.keys()}
 
 
