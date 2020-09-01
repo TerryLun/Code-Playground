@@ -9,6 +9,12 @@ inp:
 1=-1
 1=-1
 0--0
+
+out:
+011110
+-====-
+------
+011110
 """
 
 for x in[c[::-1]for c in list(zip(*[input()for i in' '*int(input().split()[1])]))]:print(*x,sep='')
