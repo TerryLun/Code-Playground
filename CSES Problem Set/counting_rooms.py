@@ -5,10 +5,10 @@ def dfs(i, j):
     """
     max recursion depth exceeded
     """
-    if i < 0 or i == n or j < 0 or j == m or grid[i][j] == '#' or visited[i][j]:
+    if i < 0 or i == n or j < 0 or j == m or grid[i][j] == '#':
         return
     else:
-        visited[i][j] = '#'
+        grid[i][j] = '#'
         dfs(i + 1, j)
         dfs(i, j + 1)
         dfs(i - 1, j)
@@ -19,6 +19,7 @@ def bfs(i, j):
     """
     TLE
     """
+
     def is_floor(x, y):
         if 0 <= x < n and 0 <= y < m and grid[x][y] == '.' and (x, y) not in q and not visited[x][y]:
             return True
@@ -38,18 +39,18 @@ def bfs(i, j):
 
 n, m = map(int, input().split())
 grid = []
-visited = []
-for i in range(n):
-    visited.append([False] * m)
+# visited = []
+# for i in range(n):
+#     visited.append([False] * m)
 count = 0
 
 for i in range(n):
-    grid.append(input())
+    grid.append(list(input()))
 
 for i in range(n):
     for j in range(m):
-        if grid[i][j] == '.' and not visited[i][j]:
-            bfs(i, j)
+        if grid[i][j] == '.':
+            dfs(i, j)
             count += 1
 
 print(count)
