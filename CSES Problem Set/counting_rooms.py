@@ -1,4 +1,7 @@
 import collections
+import sys
+
+sys.setrecursionlimit(1000 * 1000 + 1)
 
 
 def dfs(i, j):
