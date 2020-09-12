@@ -95,10 +95,13 @@ def convert_to_hms(s):
 def is_clap(h, m, s):
     minute_block_per_sec = 1 / 60
     hour_block_per_sec = 5 / 3600
+
     minute_in_sec = convert_to_s(0, m, s)
     hour_in_sec = convert_to_s(h, m, s)
+
     m_pos_in_block = minute_in_sec * minute_block_per_sec
     h_pos_in_block = hour_in_sec * hour_block_per_sec
+
     return math.isclose(m_pos_in_block, h_pos_in_block, abs_tol=0.007)
 
 
@@ -108,8 +111,8 @@ for i in range(3600 * 12):
     if is_clap(h, m, s):
         clap_time_in_sec.append(i)
 
-# for sec in a:
-#     print(convert_to_hms(sec))
+# for sec in clap_time_in_sec:
+#     print(convert_to_hms(sec)) # (0, 0, 0) (1, 5, 27) (2, 10, 55) (3, 16, 22) (4, 21, 49) (5, 27, 16) (6, 32, 44) (7, 38, 11) (8, 43, 38) (9, 49, 5) (10, 54, 33)
 # print(a)  # [0, 3927, 7855, 11782, 15709, 19636, 23564, 27491, 31418, 35345, 39273]
 
 h, m, s = [int(input()) for i in range(3)]
