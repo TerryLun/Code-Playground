@@ -1,4 +1,4 @@
-def bs(ls, n):
+def bsr(ls, n):
     if not ls:
         return -1
     low = 0
@@ -16,6 +16,23 @@ def bs(ls, n):
             return helper(mid + 1, hi)
 
     return helper(low, high)
+
+
+def bs(ls, n):
+    if not ls:
+        return -1
+    lo = 0
+    hi = len(ls)-1
+    while lo <= hi:
+        mid = (hi+lo)//2
+        if hi == lo and ls[hi] != n:
+            return -1
+        elif ls[mid] == n:
+            return mid
+        elif ls[mid] > n:
+            hi = mid-1
+        else:
+            lo = mid+1
 
 
 # unit tests
