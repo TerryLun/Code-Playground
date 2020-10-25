@@ -1,5 +1,5 @@
 """
-Staircase number is a number that starts with 1 and each subsequence number goes up by 1,
+Staircase number is a number that starts with 1 and each subsequence digit goes up by 1,
 until it reaches the maximum N, then it goes back down until the last digit is 1
 
 true:
