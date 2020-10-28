@@ -5,17 +5,17 @@ a = [1, 2, 3, 4]
 """
 itertools
 """
-r = []
+r1 = []
 for i in range(0, len(a) + 1):
     for element in itertools.combinations(a, i):
-        r.append(list(element))
-print(r)
+        r1.append(list(element))
+print(r1)
 
 """
 power set
 """
 n = len(a)
-r = []
+r2 = []
 for bot_pattern in range(2 ** n):
     temp = []
     i = 0
@@ -24,5 +24,9 @@ for bot_pattern in range(2 ** n):
             temp.append(a[i])
         bot_pattern >>= 1
         i += 1
-    r.append(temp)
-print(r)
+    r2.append(temp)
+print(r2)
+
+rs1 = {tuple(i) for i in r1}
+rs2 = {tuple(i) for i in r2}
+print(rs1 == rs2)
