@@ -25,6 +25,14 @@ def lca(root, a, b):
     return left or right
 
 
+def lca2(root, a, b):
+    if root.val < a and root.val < b:
+        return lca2(root.right, a, b)
+    if root.val > a and root.val > b:
+        return lca2(root.left, a, b)
+    return root
+
+
 root = Node()
 root.val = 4
 
@@ -44,5 +52,5 @@ root.right.left.val = 5
 root.right.right = Node()
 root.right.right.val = 7
 
-node = lca(root, 1, 7)
+node = lca2(root, 0, 7)
 print(node.val)
