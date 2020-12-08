@@ -16,6 +16,6 @@ print(qs)
 r = 0
 
 for q in qs:
-    r += len(q[0].intersection(*q))
+    r += len(set.intersection(*q))
 
 print(r)
