@@ -8,7 +8,8 @@ while 1:
     if not line:
         break
     main_bag, right = line.split(' contain ')
-    right = right.replace('.', '')
+    main_bag = main_bag.replace('bags', 'bag')
+    right = right.replace('.', '').replace('bags', 'bag')
 
     small_bags = right.split(', ')
     bags_with_num = {}
@@ -23,3 +24,27 @@ while 1:
     bags_with_num.clear()
 
 pprint(bags, depth=2)
+
+r = 0
+
+
+def bfs(bag):
+    if bag == 'shiny gold bag' or bag not in bags:
+        return False
+    que = {*bags[bag].keys()}
+    while que:
+        b = que.pop()
+        if b == 'shiny gold bag' or (b in bags and 'shiny gold bag' in bags[b].keys()):
+            return True
+        elif b in bags:
+            for k in bags[b].keys():
+                que.add(k)
+    return False
+
+
+for b in bags.keys():
+    if bfs(b):
+        r += 1
+
+print(r)
+
