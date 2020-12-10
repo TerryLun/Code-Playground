@@ -30,16 +30,16 @@ for i in range(26, len(nums)):
 index = nums.index(target)
 
 
-def find_nums(li, target):
+def find_nums(li, tar):
     for i in range(1, len(li)):
         li[i] += li[i - 1]
-    if target in li:
-        return li.index(target)
+    if tar in li:
+        return li.index(tar)
 
 
 for i in range(index):
     new_list = nums[i:]
     j = find_nums(new_list, target)
     if j:
-        rlist = nums[i:i + j + 1]
-        print(min(rlist) + max(rlist))
+        res_list = nums[i:i + j + 1]
+        print(min(res_list) + max(res_list))
